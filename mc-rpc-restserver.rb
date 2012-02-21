@@ -25,7 +25,7 @@ require 'json'
 require 'cgi'
 
 include MCollective::RPC
-#set :port, 4566
+set :port, 4566
 
 uid = Etc.getpwnam("nobody").uid
 Process::Sys.setuid(uid)
@@ -59,7 +59,7 @@ helpers do
   def request_params_repeats
     params = {}
     request.query_string.split('&').each do |pair|
-      kv = pair.split('=').map{|v| CGI.unescape(v)}
+      kv = CGI.unescape(pair).split('=')
       params.merge!({kv[0]=> kv.length > 1 ? kv[1] : nil }) {|key, o, n| o.is_a?(Array) ? o << n : [o,n]}
     end
     params
