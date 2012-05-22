@@ -1,7 +1,6 @@
 Simple REST server to access MCollective
 
 == Options ==
-get bash package status for two machines with the web class
 The following filters/options are supported:
 -Ffact=value : fact filter
 -Cclass_name : class filter
@@ -13,10 +12,10 @@ The following filters/options are supported:
   http://localhost:4567/mco/find
 Finds all nodes
 
-  htp://localhost:4567/mco/find?-Cweb
+  http://localhost:4567/mco/find?-Cweb
 Finds all nodes with the web class
 
   http://localhost:4567/mco/filemgr/status?file=/etc/hosts&-Ihostname
-Returs the file info for /etc/hosts on the node with the identity 'hostname'
+Returns the file info for /etc/hosts on the node with the identity 'hostname'
 
 Results are in JSON format
